@@ -1,0 +1,10 @@
+{
+  "Name": "BreedingOverhaul",
+  "Author": "StarAmy",
+  "Version": "1.0.0",
+  "Description": "Breeding system overhaul for Stardew Valley",
+  "UniqueID": "StarAmy.BreedingOverhaul",
+  "EntryDll": "BreedingOverhaul.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}
