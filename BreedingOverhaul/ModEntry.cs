@@ -10,6 +10,10 @@ namespace BreedingOverhaul
     /// <summary>The mod entry point.</summary>
     public class ModEntry : Mod
     {
+        private HarmonyLib.Harmony Harmony;
+        public static IModHelper MyHelper;
+        public static IMonitor MyMonitor;
+
         /*********
         ** Public methods
         *********/
@@ -17,7 +21,10 @@ namespace BreedingOverhaul
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
         {
-            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+            Harmony = new HarmonyLib.Harmony("BreedingOverhaul");
+            MyHelper = helper;
+            MyMonitor = this.Monitor;
+            //helper.Events.Input.ButtonPressed += this.OnButtonPressed;
         }
 
 
