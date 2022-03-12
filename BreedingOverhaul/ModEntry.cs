@@ -10,7 +10,7 @@ namespace BreedingOverhaul
     /// <summary>The mod entry point.</summary>
     public class ModEntry : Mod
     {
-        private HarmonyLib.Harmony Harmony;
+        //private HarmonyLib.Harmony Harmony;
         public static IModHelper MyHelper;
         public static IMonitor MyMonitor;
 
@@ -21,10 +21,19 @@ namespace BreedingOverhaul
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
         {
-            Harmony = new HarmonyLib.Harmony("BreedingOverhaul");
+            this.Monitor.Log($"Mod entry in Breeeding Overhaul.", LogLevel.Debug);
+            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+
+
+            this.Monitor.Log($"Patching in Breeeding Overhaul for ${helper.ModRegistry.ModID}.", LogLevel.Debug);
+            HarmonyLib.Harmony harmony = new HarmonyLib.Harmony(helper.ModRegistry.ModID);
+            harmony.PatchAll();
+
+            //Harmony = new HarmonyLib.Harmony("BreedingOverhaul");
+            //Harmony.PatchAll();
+            //harmony.Patch(typeof(StardewValley.AnimalHouse).GetMethod("incubator"), prefix: new HarmonyLib.HarmonyMethod(typeof(IncubatorPatch).GetMethod("incubator")));
             MyHelper = helper;
             MyMonitor = this.Monitor;
-            //helper.Events.Input.ButtonPressed += this.OnButtonPressed;
         }
 
 

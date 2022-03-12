@@ -19,9 +19,9 @@ namespace BreedingOverhaul
     {
         [HarmonyPrefix]
         [HarmonyPatch(nameof(StardewValley.AnimalHouse.incubator))]
-        public bool Incubator()
+        public static bool incubator()
         {
-            ModEntry.MyMonitor.Log($"Overridden incubator function");
+            //ModEntry.MyMonitor.Log($"Overridden incubator function");
             Game1.addHUDMessage(new HUDMessage("The incubator is currently offline", ""));
             return true;
         }
