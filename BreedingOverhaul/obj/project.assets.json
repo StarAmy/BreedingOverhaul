@@ -162,6 +162,19 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Paritee.StardewValley.Core/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
+          "Pathoschild.Stardew.ModBuildConfig": "2.2.0"
+        },
+        "compile": {
+          "lib/net452/Paritee.StardewValley.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net452/Paritee.StardewValley.Core.dll": {}
+        }
+      },
       "Pathoschild.Stardew.ModBuildConfig/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -953,6 +966,18 @@
         "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Paritee.StardewValley.Core/2.0.1": {
+      "sha512": "0ogCntxaGJQ5rw0Q6/bCzPdeLdeUYYo2PO8kUHKmZzik437GhfhWu/ThjnxCr9+35+kZxz33q5VwyTFU2yMA3Q==",
+      "type": "package",
+      "path": "paritee.stardewvalley.core/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/Paritee.StardewValley.Core.dll",
+        "paritee.stardewvalley.core.2.0.1.nupkg.sha512",
+        "paritee.stardewvalley.core.nuspec"
       ]
     },
     "Pathoschild.Stardew.ModBuildConfig/4.0.0": {
@@ -2993,27 +3018,28 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Lib.Harmony >= 2.2.0",
+      "Paritee.StardewValley.Core >= 2.0.1",
       "Pathoschild.Stardew.ModBuildConfig >= 4.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Amelia\\.nuget\\packages\\": {},
+    "C:\\Users\\A&A\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amelia\\source\\repos\\BreedingOverhaul\\BreedingOverhaul\\BreedingOverhaul.csproj",
+      "projectUniqueName": "C:\\Users\\A&A\\Documents\\GitHub\\BreedingOverhaul\\BreedingOverhaul\\BreedingOverhaul.csproj",
       "projectName": "BreedingOverhaul",
-      "projectPath": "C:\\Users\\Amelia\\source\\repos\\BreedingOverhaul\\BreedingOverhaul\\BreedingOverhaul.csproj",
-      "packagesPath": "C:\\Users\\Amelia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amelia\\source\\repos\\BreedingOverhaul\\BreedingOverhaul\\obj\\",
+      "projectPath": "C:\\Users\\A&A\\Documents\\GitHub\\BreedingOverhaul\\BreedingOverhaul\\BreedingOverhaul.csproj",
+      "packagesPath": "C:\\Users\\A&A\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\A&A\\Documents\\GitHub\\BreedingOverhaul\\BreedingOverhaul\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Amelia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\A&A\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3044,6 +3070,10 @@
             "target": "Package",
             "version": "[2.2.0, )"
           },
+          "Paritee.StardewValley.Core": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
           "Pathoschild.Stardew.ModBuildConfig": {
             "target": "Package",
             "version": "[4.0.0, )"
@@ -3064,8 +3094,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Paritee.StardewValley.Core 2.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Paritee.StardewValley.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

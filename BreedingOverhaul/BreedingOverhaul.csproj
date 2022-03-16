@@ -1,13 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
 	  <EnableHarmony>true</EnableHarmony>
+	  <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	  <DebugType>embedded</DebugType>
 
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="data\incubatordata.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="data\incubatordata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.2.0" />
+    <PackageReference Include="Paritee.StardewValley.Core" Version="2.0.1" />
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.0.0" />
   </ItemGroup>
 
