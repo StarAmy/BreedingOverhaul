@@ -19,12 +19,12 @@ namespace BreedingOverhaul
 {
     public class IncubatorPatch
     {
-        public static bool incubator()
+        /*public static bool incubator()
         {
             ModEntry.MyMonitor.Log($"Overridden incubator function", LogLevel.Debug);
             Game1.addHUDMessage(new HUDMessage("The incubator is currently offline", ""));
             return false;
-        }
+        }*/
 
         public static void isFullPatch(ref bool __result)
         {
@@ -59,6 +59,7 @@ namespace BreedingOverhaul
                 
                 if (__instance.Name.Contains("Incubator"))
                 {
+
                     //Game1.addHUDMessage(new HUDMessage("The incubator is currently offline", ""));
                     //__result = false;
                     //return false;

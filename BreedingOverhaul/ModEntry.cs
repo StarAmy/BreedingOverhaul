@@ -163,8 +163,8 @@ namespace BreedingOverhaul
             harmony.Patch(original: AccessTools.Method(typeof(StardewValley.AnimalHouse), "resetSharedState"),
                          prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.resetSharedStatePatch)));
 
-            harmony.Patch(original: AccessTools.Method(typeof(StardewValley.AnimalHouse), nameof(StardewValley.AnimalHouse.incubator)),
-               prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.incubator)));
+            //harmony.Patch(original: AccessTools.Method(typeof(StardewValley.AnimalHouse), nameof(StardewValley.AnimalHouse.incubator)),
+            //   prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.incubator)));
             
         }
 
