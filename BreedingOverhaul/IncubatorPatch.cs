@@ -25,13 +25,14 @@ namespace BreedingOverhaul
             Game1.addHUDMessage(new HUDMessage("The incubator is currently offline", ""));
             return false;
         }*/
-        public static bool isEggType(Item dropInItem, int unused)
+        public static bool isEggType(Item dropInItem, int unused, ref bool __result)
         {
-            if (dropInItem != null && dropInItem.Name.Contains("Fertilized Egg"))
+            if (dropInItem != null && dropInItem.Name.Contains("Fertilized"))
             {
-                return true;
+                __result = true;
+                return false;
             }
-            return false;
+            return true;
         }
         public static void isFullPatch(ref bool __result)
         {
