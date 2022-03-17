@@ -64,14 +64,13 @@ namespace BreedingOverhaul
             {
                 StardewValley.Object dropIn = dropInItem as StardewValley.Object;
                 ModEntry.MyMonitor.Log($"object drop in action patch! {dropIn.Name}", LogLevel.Debug);
-                
-                if (__instance.Name.Contains("Incubator"))
+                if (dropIn.Name.Contains("Fertilized"))
                 {
-
-                    //Game1.addHUDMessage(new HUDMessage("The incubator is currently offline", ""));
-                    //__result = false;
-                    //return false;
+                    ModEntry.MyMonitor.Log($"making {dropIn.Name} an egg catagory", LogLevel.Debug);
+                    dropIn.Category = -5;
                 }
+
+               
             }
             return true;
         }

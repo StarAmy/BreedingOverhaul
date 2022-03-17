@@ -157,8 +157,8 @@ namespace BreedingOverhaul
             harmony.Patch(original: AccessTools.Method( typeof(Paritee.StardewValley.Core.Locations.AnimalHouse), nameof(Paritee.StardewValley.Core.Locations.AnimalHouse.GetRandomTypeFromIncubator)),
                 prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.getRandomTypePatch)));
 
-            harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Utility), nameof(StardewValley.Utility.IsNormalObjectAtParentSheetIndex)),
-                          prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.isEggType)));
+            //harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Utility), nameof(StardewValley.Utility.IsNormalObjectAtParentSheetIndex)),
+            //              prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.isEggType)));
 
 
             //harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Buildings.Coop), nameof(StardewValley.Buildings.Coop.doAction)),
