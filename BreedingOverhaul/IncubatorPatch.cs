@@ -24,7 +24,7 @@ namespace BreedingOverhaul
             ModEntry.MyMonitor.Log($"Overridden incubator function", LogLevel.Debug);
             Game1.addHUDMessage(new HUDMessage("The incubator is currently offline", ""));
             return false;
-        }*/
+        }
         public static bool isEggType(Item item, int index, ref bool __result)
         {
             if (item != null && item.Name.Contains("Fertilized"))
@@ -33,7 +33,7 @@ namespace BreedingOverhaul
                 return false;
             }
             return true;
-        }
+        }*/
         public static void isFullPatch(ref bool __result)
         {
             //ModEntry.MyMonitor.Log($"AnimalHouse isFull trace {Environment.StackTrace}", LogLevel.Debug);
@@ -57,22 +57,42 @@ namespace BreedingOverhaul
             return true;
         }
 
-        public static bool performObjectDropInActionPatch(StardewValley.Object __instance, Item dropInItem, bool probe, Farmer who, ref bool __result)
+        public static bool performObjectDropInActionPrefix(StardewValley.Object __instance, Item dropInItem, bool probe, Farmer who, ref int __state, ref bool __result)
         {
-            ModEntry.MyMonitor.Log($"object drop in action patch! on {__instance.Name}", LogLevel.Debug);
-            if (dropInItem is StardewValley.Object)
+            ModEntry.MyMonitor.Log($"object drop in action patch! on {__instance.Name}, drop in {dropInItem.Name} probe is {probe}", LogLevel.Debug);
+            if (__instance.Name.Equals("Incubator") && probe == false)
             {
-                StardewValley.Object dropIn = dropInItem as StardewValley.Object;
-                ModEntry.MyMonitor.Log($"object drop in action patch! {dropIn.Name}", LogLevel.Debug);
-                if (dropIn.Name.Contains("Fertilized"))
+                __state = new int();
+                __state = dropInItem.Category;
+                if (ModEntry.incubatorData.IncubatorItems.ContainsKey(dropInItem.Name))
                 {
-                    ModEntry.MyMonitor.Log($"making {dropIn.Name} an egg catagory", LogLevel.Debug);
-                    dropIn.Category = -5;
+                    ModEntry.MyMonitor.Log($"making {dropInItem.Name} an egg catagory temporarily {__state} -> -5", LogLevel.Debug);
+                    dropInItem.Category = -5;
+                }
+                else if (dropInItem.Category == -5)
+                {
+                    ModEntry.MyMonitor.Log($"making {dropInItem.Name} NOT an egg temporarily {__state} -> 0", LogLevel.Debug);
+                    dropInItem.Category = 0;
+                } else
+                {
+                    ModEntry.MyMonitor.Log($"not in list or an egg", LogLevel.Debug);
                 }
 
-               
             }
+
             return true;
+        }
+
+        public static void performObjectDropInActionPostfix(StardewValley.Object __instance, Item dropInItem, bool probe, Farmer who, ref int __state, ref bool __result)
+        {
+            if (__instance.Name.Equals("Incubator") && __state == -5 && probe == false)
+            {
+                ModEntry.MyMonitor.Log($"restoring {dropInItem.Name} category {dropInItem.Category} -> {__state} -> 0", LogLevel.Debug);
+                dropInItem.Category = __state;
+            } else
+            {
+                ModEntry.MyMonitor.Log($" no work to be done postfix {dropInItem.Name} category {dropInItem.Category} into {__instance.Name}", LogLevel.Debug);
+            }
         }
 
 

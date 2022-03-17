@@ -29,7 +29,7 @@ namespace BreedingOverhaul
         public static IMonitor MyMonitor;
         public static HarmonyLib.Harmony harmony;
         private static IncubatorPatch ipatch;
-        private static GameLocationPatcher glp;
+        //private static GameLocationPatcher glp;
         public static IncubatorData incubatorData;
 
         //AnimalBuildingData = DataLoader.Helper.Data.ReadJsonFile<AnimalBuildingData>("data\\animalBuilding.json")
@@ -110,6 +110,11 @@ namespace BreedingOverhaul
 
             // print button presses to the console window
             this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
+            if (e.Button.ToString() == "OemCloseBrackets")
+            {
+                MyMonitor.Log("Re-reading JSON file");
+                incubatorData = MyHelper.Data.ReadJsonFile<IncubatorData>("data\\incubatordata.json");
+            }
 /*
             if (e.Button.ToString() == "P")
             {
@@ -132,7 +137,9 @@ namespace BreedingOverhaul
             //harmony.Patch(original: AccessTools.Method(typeof(StardewValley.AnimalHouse), nameof(StardewValley.AnimalHouse.checkAction)),
             //              prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.checkActionPatch)));
             harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Object), nameof(StardewValley.Object.performObjectDropInAction)),
-                          prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.performObjectDropInActionPatch)));
+                          prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.performObjectDropInActionPrefix)));
+            harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Object), nameof(StardewValley.Object.performObjectDropInAction)),
+                          postfix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.performObjectDropInActionPostfix)));
             // all patches from that other Harmony user:
             /*
             MyMonitor.Log($"Patching addNewHatchedAnimal - removing prefixes", LogLevel.Debug);

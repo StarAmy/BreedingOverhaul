@@ -8,14 +8,3 @@ C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\
 C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.csproj.CoreCompileInputs.cache
 C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.dll
 C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.pdb
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\bin\Debug\net5.0\data\incubatordata.json
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\bin\Debug\net5.0\BreedingOverhaul.deps.json
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\bin\Debug\net5.0\BreedingOverhaul.dll
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.csproj.AssemblyReference.cache
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.Properties.Resources.resources
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.csproj.GenerateResource.cache
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.AssemblyInfoInputs.cache
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.AssemblyInfo.cs
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.csproj.CoreCompileInputs.cache
-C:\Users\A&A\Documents\GitHub\BreedingOverhaul\BreedingOverhaul\obj\Debug\net5.0\BreedingOverhaul.dll
