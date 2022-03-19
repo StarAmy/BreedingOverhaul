@@ -1,0 +1,13 @@
+{
+    "Name": "Large Golden Egg",
+    "Description": "A beautiful golden egg from a happy golden chicken.",
+    "Category": "Egg",
+    "Edibility": 30,
+    "Price": 800,
+    "IsColored": false,
+    "GiftTastes":
+    {
+        "Love": ["Shane"],
+		"Like": ["Alex", "Elliot", "Harvey", "Sam", "Sebastian", "Marnie", "Abigail", "Emily", "Haley", "Leah", "Maru", "Penny", "Caroline", "Clint", "Demetrius", "Evelyn", "George", "Gus", "Jas", "Jodie", "Kent", "Leo", "Lewis", "Linus", "Pam", "Pierre", "Robin", "Vincent", "Willy", "Wizard"]
+    },
+}

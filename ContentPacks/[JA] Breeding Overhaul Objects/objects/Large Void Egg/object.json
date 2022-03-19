@@ -1,0 +1,12 @@
+{
+    "Name": "Large Void Egg",
+    "Description": "An extra-large void egg from a happy void chicken.",
+    "Category": "Egg",
+    "Edibility": 30,
+    "Price": 125,
+    "IsColored": false,
+    "GiftTastes":
+    {
+        "Love": ["Sebastian"],
+    },
+}

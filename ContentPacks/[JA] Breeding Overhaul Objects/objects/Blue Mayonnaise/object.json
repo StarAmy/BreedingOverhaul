@@ -1,0 +1,12 @@
+{
+    "Name": "Blue Mayonnaise",
+    "Description": "I guess someone might think this is fancy",
+    "Category": "ArtisanGoods",
+    "Edibility": -300,
+    "Price": 450,
+    "IsColored": false,
+    "GiftTastes":
+    {
+		"Like": ["Shane", "Alex", "Elliot", "Harvey", "Sam", "Sebastian", "Marnie", "Abigail", "Emily", "Haley", "Leah", "Maru", "Penny", "Caroline", "Clint", "Demetrius", "Evelyn", "George", "Gus", "Jas", "Jodie", "Kent", "Leo", "Lewis", "Linus", "Pam", "Pierre", "Robin", "Vincent", "Willy", "Wizard"]
+    },
+}

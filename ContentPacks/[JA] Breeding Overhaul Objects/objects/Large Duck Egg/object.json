@@ -1,0 +1,12 @@
+{
+    "Name": "Large Duck Egg",
+    "Description": "An extra-large duck egg from a happy duck.",
+    "Category": "Egg",
+    "Edibility": 30,
+    "Price": 180,
+    "IsColored": false,
+    "GiftTastes":
+    {
+        "Like": ["Marnie"],
+    },
+}

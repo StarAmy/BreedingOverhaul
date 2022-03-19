@@ -1,0 +1,18 @@
+{
+    "Name": "Pig Tusk",
+    "Description": "Pig tusk dropped by a male pig. Good source of DNA.",
+    "Category": "AnimalGoods",
+    "Edibility": -300,
+    "Price": 300,
+    "IsColored": false,
+    "Recipe": null,
+    "CanPurchase": false, 
+    "GiftTastes":
+    {
+        "Love": [],
+        "Like": [],
+        "Neutral": [],
+        "Dislike": [],
+        "Hate": [],
+    },
+}

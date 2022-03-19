@@ -1,0 +1,12 @@
+{
+    "Name": "Chocolate Cheesecake",
+    "Description": "Delicous, rich cheesecake.",
+    "Category": "ArtisanGoods",
+    "Edibility": 30,
+    "Price": 230,
+    "IsColored": false,
+    "GiftTastes":
+    {
+        "Love": ["Pam", "Abigail"],
+    },
+}

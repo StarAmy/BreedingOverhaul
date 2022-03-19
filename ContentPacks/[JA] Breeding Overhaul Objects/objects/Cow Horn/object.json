@@ -1,0 +1,18 @@
+{
+    "Name": "Cow Horn",
+    "Description": "Horn dropped by a male cow. Good source of DNA.",
+    "Category": "AnimalGoods",
+    "Edibility": -300,
+    "Price": 150,
+    "IsColored": false,
+    "Recipe": null,
+    "CanPurchase": false, 
+    "GiftTastes":
+    {
+        "Love": [],
+        "Like": [],
+        "Neutral": [],
+        "Dislike": [],
+        "Hate": [],
+    },
+}

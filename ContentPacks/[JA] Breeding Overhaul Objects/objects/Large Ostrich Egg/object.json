@@ -1,0 +1,12 @@
+{
+    "Name": "Large Ostrich Egg",
+    "Description": "It's massive!",
+    "Category": "Egg",
+    "Edibility": 30,
+    "Price": 1000,
+    "IsColored": false,
+    "GiftTastes":
+    {
+        "Like": ["Shane"],
+    },
+}

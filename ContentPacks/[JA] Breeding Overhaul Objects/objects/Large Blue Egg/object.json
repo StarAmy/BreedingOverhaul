@@ -1,0 +1,12 @@
+{
+    "Name": "Large Blue Egg",
+    "Description": "A pretty blue egg from a happy blue chicken.",
+    "Category": "Crafting",
+    "Edibility": 30,
+    "Price": 240,
+    "IsColored": false,
+    "GiftTastes":
+    {
+        "Love": ["Shane"],
+    },
+}

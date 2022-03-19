@@ -1,0 +1,18 @@
+{
+    "Name": "Goat Horn",
+    "Description": "Horn dropped by a male goat. Good source of DNA.",
+    "Category": "AnimalGoods",
+    "Edibility": -300,
+    "Price": 200,
+    "IsColored": false,
+    "Recipe": null,
+    "CanPurchase": false, 
+    "GiftTastes":
+    {
+        "Love": [],
+        "Like": [],
+        "Neutral": [],
+        "Dislike": [],
+        "Hate": [],
+    },
+}
