@@ -62,7 +62,7 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
         
         Ostrich = Ostrich Egg, Large Ostrich Egg
         
-        Dinosaur = Dinosaur Egg
+        Dinosaur = Dinosaur Egg, Large Dinosaur Egg
         
 5. [JA] Breeding Overhaul Objects adds all the new objects dropped by 'male' and 'female' variants, as well as the DNA and fertilized eggs they can be crafted or processed into.
         
@@ -74,7 +74,9 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
         
         Blue Egg, Large Blue Egg, Large Duck Egg, Large Golden Egg, Large Void Egg, and Large Ostrich Egg
         
-        Fertilized White Egg, Fertilized Brown Egg, Fertilized Blue Egg, Fertilized Void Egg, Fertilized Golden Egg, Fertilized Duck Egg, and Fertilized Ostrich Egg
+        Fertilized White Egg, Fertilized Brown Egg, Fertilized Blue Egg, Fertilized Void Egg, Fertilized Golden Egg, Fertilized Duck Egg, Fertilized Ostrich Egg, and                   Fertilized Dinosaur Egg
+        
+        Fertilized Large White Egg, Fertilized Large Brown Egg, Fertilized Large Blue Egg, Fertilized Large Void Egg, Fertilized Large Golden Egg, Fertilized Large                     Duck Egg, Fertilized Large Ostrich Egg, and Fertilized Large Dinosaur Egg
         
         Blue Mayonnaise, Golden Mayonnaise, Ostrich Mayonnaise
         
