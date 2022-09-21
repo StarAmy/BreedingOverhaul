@@ -77,8 +77,6 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
         
         Blue Egg, Large Blue Egg = Blue Mayonnaise
         Golden Egg, Large Golden Egg = Golden Mayonnaise
-        Ostrich Egg, Large Ostrich Egg = Ostrich Mayonnaise
-
 
 So, what does this mean for gameplay? 
 
