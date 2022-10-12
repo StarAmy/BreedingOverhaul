@@ -72,14 +72,14 @@ Fertilized Duck Egg, which hatch 1 new baby duck (normal or male)
 Fertilized Ostrich Egg, which hatch 1 new baby ostrich (normal or male)
 Fertilized Dinosaur Egg, which hatch 1 new dinosaur (normal or male)
         
-        	Fertilized Large White Egg, which hatch 1-2 new baby chickens (brown, white, or male)
-Fertilized Large Brown Egg, which hatch 1-1 new baby chickens (brown, white, or male)
-Fertilized Large Blue Egg, which hatch 1-2 new baby chickens (blue or male)
-Fertilized Large Void Egg, which hatch 1-2 new baby chickens (void or male)
-Fertilized Large Golden Egg, which hatch 1-2 new baby chickens (golden or male)
-Fertilized Large Duck Egg, which hatch 1-2 new baby ducks (normal or male)
-Fertilized Large Ostrich Egg, which hatch 1-2 new baby ostrich (normal or male)
-Fertilized Large Dinosaur Egg, which hatch 1-2 new dinosaurs (normal or male)
+        	Fertilized Large White Egg, which hatch 1-2 new baby chickens (brown, white, or male)*
+Fertilized Large Brown Egg, which hatch 1-1 new baby chickens (brown, white, or male)*
+Fertilized Large Blue Egg, which hatch 1-2 new baby chickens (blue or male)*
+Fertilized Large Void Egg, which hatch 1-2 new baby chickens (void or male)*
+Fertilized Large Golden Egg, which hatch 1-2 new baby chickens (golden or male)*
+Fertilized Large Duck Egg, which hatch 1-2 new baby ducks (normal or male)*
+Fertilized Large Ostrich Egg, which hatch 1-2 new baby ostrich (normal or male)*
+Fertilized Large Dinosaur Egg, which hatch 1-2 new dinosaurs (normal or male)*
         
         	Blue Mayonnaise, a new artisan good made from blue eggs and large blue eggs.
 Golden Mayonnaise, a new artisan good made from golden eggs and large golden eggs.
@@ -139,3 +139,7 @@ Feel like using Paritee’s awesome males or another set instead of mine? Have s
 A New Terminal Command
 
 	Type list_animals into your terminal (or your chat bar if you’re using BLANK mod) to get a full list of animal names and their types. This can be handy if you’re using animal skins with few visual differences between genders/types.
+
+
+
+* Double hatching feature is in the works and will be included in ~1.1.0
