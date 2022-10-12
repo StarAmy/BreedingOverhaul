@@ -2,7 +2,7 @@
     "Name": "Fertilized Void Egg",
     "Description": "Fertilized Void Chicken Egg, inserted into the incubator for breeding.",
     "Category": "Crafting",
-    "Edibility": 30,
+    "Edibility": 15,
     "Price": 65,
     "IsColored": false,
     "Recipe": { 
@@ -14,7 +14,7 @@
              "Count": 1,
               },
              {
-             "Object": "Large Void Egg",
+             "Object": "Void Egg",
              "Count": 1,
             }       
             ],
@@ -23,6 +23,6 @@
     "GiftTastes":
     {
         "Like": ["Shane"],
-		"Hate": ["Alex", "Elliot", "Harvey", "Sam", "Sebastian", "Marnie", "Abigail", "Emily", "Haley", "Leah", "Maru", "Penny", "Caroline", "Clint", "Demetrius", "Evelyn", "George", "Gus", "Jas", "Jodie", "Kent", "Leo", "Lewis", "Linus", "Pam", "Pierre", "Robin", "Vincent", "Willy", "Wizard"]
+		"Hate": ["Alex", "Elliot", "Harvey", "Sam", "Sebastian", "Marnie", "Abigail", "Emily", "Haley", "Leah", "Maru", "Penny", "Caroline", "Clint", "Demetrius", "Evelyn", "George", "Gus", "Jas", "Jodi", "Kent", "Leo", "Lewis", "Linus", "Pam", "Pierre", "Robin", "Vincent", "Willy", "Wizard"]
     },
 }

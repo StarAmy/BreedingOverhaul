@@ -30,45 +30,21 @@
 					}
 				},
 				],
+			"Buildings": [
+				"Deluxe Barn"
+			],
 			},
 			{
 			"Action": "Update",
 			"Category": "Chicken",
 			"Types": [
 				{
-					"Type": "Male White Chicken",
+					"Type": "Male Chicken",
 					"DeluxeProduceLuck": 0.2,
-					"Data": "1/3/Manure/White Feather/cluck/8/32/48/32/8/32/48/32/0/false/Coop/16/16/16/16/4/7/null/641/800/Male White Chicken/Coop",
+					"Data": "1/3/Manure/Chicken Feather/cluck/8/32/48/32/8/32/48/32/0/false/Coop/16/16/16/16/4/7/null/641/800/Male Chicken/Coop",
 					"Sprites": {
-						"Adult": "assets/MaleWhiteChicken.png",
-						"Baby": "assets/BabyMaleWhiteChicken.png"
-					}
-				},
-				{
-					"Type": "Male Brown Chicken",
-					"DeluxeProduceLuck": 0.2,
-					"Data": "1/3/Manure/Brown Feather/cluck/8/32/48/32/8/32/48/32/0/false/Coop/16/16/16/16/4/7/null/641/800/Male Brown Chicken/Coop",
-					"Sprites": {
-						"Adult": "assets/MaleBrownChicken.png",
-						"Baby": "assets/BabyMaleBrownChicken.png"
-					}
-				},
-				{
-					"Type": "Male Golden Chicken",
-					"DeluxeProduceLuck": 0.2,
-					"Data": "1/3/Manure/Golden Feather/cluck/8/32/48/32/8/32/48/32/0/false/Coop/16/16/16/16/4/7/null/641/800/Male Golden Chicken/Coop",
-					"Sprites": {
-						"Adult": "assets/MaleGoldenChicken.png",
-						"Baby": "assets/BabyMaleGoldenChicken.png"
-					}
-				},
-				{
-					"Type": "Male Blue Chicken",
-					"DeluxeProduceLuck": 0.2,
-					"Data": "1/3/Manure/Blue Feather/cluck/8/32/48/32/8/32/48/32/0/false/Coop/16/16/16/16/4/7/null/641/800/Male Blue Chicken/Coop",
-					"Sprites": {
-						"Adult": "assets/MaleBlueChicken.png",
-						"Baby": "assets/BabyMaleBlueChicken.png"
+						"Adult": "assets/MaleChicken.png",
+						"Baby": "assets/BabyMaleChicken.png"
 					}
 				},
 			],
@@ -161,24 +137,6 @@
 						"Baby": "assets/BabyMaleGoat.png"
 					}
 				},
-			],
-			},
-			{
-			"Action": "Update",
-			"Category": "Void Chicken",
-			"Types": [
-				{
-					"Type": "Male Void Chicken",
-					"DeluxeProduceLuck": 0.2,
-					"Data": "1/3/Manure/Black Feather/cluck/8/32/48/32/8/32/48/32/0/false/Coop/16/16/16/16/4/7/null/641/800/Male Void Chicken/Coop",
-					"Sprites": {
-						"Adult": "assets/MaleVoidChicken.png",
-						"Baby": "assets/BabyMaleVoidChicken.png"
-					}
-				},
-			],
-			"Buildings": [
-				"Deluxe Coop"
 			],
 			},
 	]

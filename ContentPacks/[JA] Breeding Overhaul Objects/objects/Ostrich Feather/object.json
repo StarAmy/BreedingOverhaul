@@ -9,7 +9,7 @@
     "CanPurchase": false, 
     "GiftTastes":
     {
-        "Love": ["Haley"],
-		"Like": ["Alex", "Elliot", "Harvey", "Sam", "Sebastian", "Shane", "Abigail", "Emily", "Marnie", "Leah", "Maru", "Penny", "Caroline", "Clint", "Demetrius", "Evelyn", "George", "Gus", "Jas", "Jodie", "Kent", "Leo", "Lewis", "Linus", "Pam", "Pierre", "Robin", "Vincent", "Willy", "Wizard"]
+        "Love": ["Haley", "Shane"],
+		"Like": ["Alex", "Elliot", "Harvey", "Sam", "Sebastian", "Abigail", "Emily", "Marnie", "Leah", "Maru", "Penny", "Caroline", "Clint", "Demetrius", "Evelyn", "George", "Gus", "Jas", "Jodi", "Kent", "Leo", "Lewis", "Linus", "Pam", "Pierre", "Robin", "Vincent", "Willy", "Wizard"]
     },
 }

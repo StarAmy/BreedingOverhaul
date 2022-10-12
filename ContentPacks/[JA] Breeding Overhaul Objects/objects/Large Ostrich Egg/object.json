@@ -2,11 +2,16 @@
     "Name": "Large Ostrich Egg",
     "Description": "It's massive!",
     "Category": "Egg",
-    "Edibility": 30,
-    "Price": 1000,
+    "Edibility": 20,
+    "Price": 1100,
     "IsColored": false,
     "GiftTastes":
     {
-        "Like": ["Shane"],
+       "Love": ["Leo"],
+        "Like": ["Shane", "Demetrius", "Alex", "Jodi", "Kent", "Leah", "Linus", "Pierre", "Sam", "Marnie"],
+        "Neutral": [ "Elliot", "Harvey", "Emily", "Maru", "Penny", "Caroline", "Clint", "Evelyn", "George", "Gus", "Lewis", "Robin", "Willy"],
+        "Disike": ["Dwarf", "Abigail", "Jas", "Vincent", "Pam", "Wizard", "Haley"],
+       "Hate": ["Sebastian"],
+
     },
 }

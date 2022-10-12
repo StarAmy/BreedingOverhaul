@@ -2,12 +2,14 @@
     "Name": "Large Golden Egg",
     "Description": "A beautiful golden egg from a happy golden chicken.",
     "Category": "Egg",
-    "Edibility": 30,
-    "Price": 800,
+    "Edibility": 15,
+    "Price": 900,
     "IsColored": false,
     "GiftTastes":
     {
-        "Love": ["Shane"],
-		"Like": ["Alex", "Elliot", "Harvey", "Sam", "Sebastian", "Marnie", "Abigail", "Emily", "Haley", "Leah", "Maru", "Penny", "Caroline", "Clint", "Demetrius", "Evelyn", "George", "Gus", "Jas", "Jodie", "Kent", "Leo", "Lewis", "Linus", "Pam", "Pierre", "Robin", "Vincent", "Willy", "Wizard"]
-    },
+        "Like": ["Shane", "Demetrius", "Alex", "Jodi", "Kent", "Leah", "Linus", "Pierre", "Sam", "Marnie"],
+        "Neutral": [ "Elliot", "Harvey", "Emily", "Maru", "Penny", "Caroline", "Clint", "Evelyn", "George", "Gus", "Lewis", "Robin", "Willy", "Leo"],
+        "Disike": ["Dwarf", "Abigail", "Jas", "Vincent", "Pam", "Wizard", "Haley"],
+        "Hate": ["Sebastian"],
+   }
 }

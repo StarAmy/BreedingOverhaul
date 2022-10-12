@@ -5,7 +5,6 @@
 	"Description": "Adds producing rules for my mod.",
 	"UniqueID": "StarAmy.ObjectRules",
 	"MinimumApiVersion": "3.0.0",
-	"UpdateKeys": [],
 	"ContentPackFor": {
 		"UniqueID": "DIGUS.ProducerFrameworkMod"
 	}
