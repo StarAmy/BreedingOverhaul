@@ -1,0 +1,15 @@
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\bin\Debug\net4.8\data\incubatordata.json
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\bin\Debug\net4.8\data\pregnancydata.json
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\bin\Debug\net4.8\BreedingOverhaul.dll
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\bin\Debug\net4.8\0Harmony.dll
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\bin\Debug\net4.8\Newtonsoft.Json.dll
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\bin\Debug\net4.8\Paritee.StardewValley.Core.dll
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net4.8\BreedingOverhaul.csproj.AssemblyReference.cache
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net4.8\BreedingOverhaul.Properties.Resources.resources
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net4.8\BreedingOverhaul.csproj.GenerateResource.cache
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net4.8\BreedingOverhaul.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net4.8\BreedingOverhaul.AssemblyInfoInputs.cache
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net4.8\BreedingOverhaul.AssemblyInfo.cs
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net4.8\BreedingOverhaul.csproj.CoreCompileInputs.cache
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net4.8\BreedingOverhaul.csproj.CopyComplete
+C:\Users\Amelia\source\repos\BreedingOverhaul\BreedingOverhaul\obj\Debug\net4.8\BreedingOverhaul.dll

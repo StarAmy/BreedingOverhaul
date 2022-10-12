@@ -18,59 +18,182 @@ using System.IO;using xTile.Layers;
 using xTile.Tiles;
 using StardewValley.Objects;
 using StardewValley.Buildings;
+using StardewValley.Characters;
 
 namespace BreedingOverhaul
 {
-    /// <summary>The mod entry point.</summary>
     public class ModEntry : Mod
     {
-        //private HarmonyLib.Harmony Harmony;
         public static IModHelper MyHelper;
         public static IMonitor MyMonitor;
         public static HarmonyLib.Harmony harmony;
+        public static ITranslationHelper i18n;
+
         private static IncubatorPatch ipatch;
-        //private static GameLocationPatcher glp;
+
         public static IncubatorData incubatorData;
+        public static PregnancyData pregnancyData;
 
-        //AnimalBuildingData = DataLoader.Helper.Data.ReadJsonFile<AnimalBuildingData>("data\\animalBuilding.json")
-
-        /*********
-        ** Public methods
-        *********/
-        /// <summary>The mod entry point, called after the mod is first loaded.</summary>
-        /// <param name="helper">Provides simplified APIs for writing mods.</param>
+        // Mod loading entry point, first code that is executed.
         public override void Entry(IModHelper helper)
         {
             this.Monitor.Log($"Mod entry in Breeeding Overhaul.", LogLevel.Debug);
-            Harmony.DEBUG = true;
             harmony = new HarmonyLib.Harmony("StarAmy.BreedingOverhaul");
             MyHelper = helper;
+            i18n = helper.Translation;
             MyMonitor = this.Monitor;
             ipatch = new IncubatorPatch();
 
+            // Load mod JSON config files
+            loadJsonData();
+
+            // hook into game events
+            helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
+
+            helper.ConsoleCommands.Add("list_animals", $"Lists the animal IDs of all animals", OnCommandReceived);
+        }
+
+        internal void OnCommandReceived(string command, string[] args)
+        {
+            switch (command)
+            {
+                case "list_animals":
+                    List<string> animalInfo = new List<string>();
+
+                    foreach (FarmAnimal animal in GetAnimals())
+                        animalInfo.Add(GetPrintString(animal));
+
+                    ModEntry.MyMonitor.Log("Animals:", LogLevel.Debug);
+                    ModEntry.MyMonitor.Log($"{string.Join(", ", animalInfo)}\n", LogLevel.Info);
+                    return;
+            }
+        }
+
+        public static IEnumerable<FarmAnimal> GetAnimals()
+        {
+            Farm farm = Game1.getFarm();
+
+            if (farm == null)
+                yield break;
+
+            foreach (FarmAnimal animal in farm.getAllFarmAnimals())
+                yield return animal;
+        }
+
+        internal static string GetPrintString(Character creature)
+        {
+            string name = creature.Name;
+            string type = GetInternalType(creature);
+
+            return $"\n # {name}:  Type - {type}";
+        }
+
+        public static string GetInternalType(Character creature)
+        {
+            if (creature is Pet || creature is Horse)
+                return ModEntry.Sanitize(creature.GetType().Name);
+            else if (creature is FarmAnimal animal)
+                return ModEntry.Sanitize(animal.type.Value);
+            return "";
+        }
+
+        public static string Sanitize(string input)
+        {
+            input = input.ToLower().Replace(" ", "");
+            return string.IsInterned(input) ?? input;
+        }
+
+        private void loadJsonData()
+        {
             incubatorData = MyHelper.Data.ReadJsonFile<IncubatorData>("data\\incubatordata.json") ?? null;
             if (incubatorData == null)
             {
-                this.Monitor.Log($"No incubator data file.", LogLevel.Debug);
-            } else
+                this.Monitor.Log($"No incubator data file.", LogLevel.Trace);
+            }
+            else
             {
-                this.Monitor.Log($"Incubator data file loaded.", LogLevel.Debug);
+                this.Monitor.Log($"Incubator data file loaded.", LogLevel.Trace);
             }
 
-            //glp = new GameLocationPatcher(this.Monitor);
-            //glp.Apply(harmony);
+            pregnancyData = MyHelper.Data.ReadJsonFile<PregnancyData>("data\\pregnancydata.json") ?? null;
+            if (pregnancyData == null)
+            {
+                this.Monitor.Log($"No pregnancy data file.", LogLevel.Trace);
+            }
+            else
+            {
+                this.Monitor.Log($"Incubator pregnancy file loaded.", LogLevel.Trace);
+            }
 
-            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
-            helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
+            // Load content pack JSON config files
+            foreach (IContentPack contentPack in Helper.ContentPacks.GetOwned())
+            {
+                try
+                {
+                    if (File.Exists(Path.Combine(contentPack.DirectoryPath, "incubatordata.json")))
+                    {
+                        this.Monitor.Log($"Reading content pack: {contentPack.Manifest.Name} {contentPack.Manifest.Version} from {contentPack.DirectoryPath}");
+                        IncubatorData contentPackData = contentPack.ReadJsonFile<IncubatorData>("incubatordata.json");
+                        foreach (string incubatorEntry in contentPackData.IncubatorItems.Keys)
+                        {
+                            if (incubatorData.IncubatorItems.Remove(incubatorEntry))
+                            {
+                                this.Monitor.Log($"Removing old incubator to offspring map entry for {incubatorEntry}, replacing with {contentPackData.IncubatorItems[incubatorEntry]}", LogLevel.Trace);
+                            }
+                            incubatorData.IncubatorItems.Add(incubatorEntry, contentPackData.IncubatorItems[incubatorEntry]);
+                        }
+                    }
+                    else
+                    {
+                        this.Monitor
+                            .Log(
+                                $"Ignoring content pack: {contentPack.Manifest.Name} {contentPack.Manifest.Version} from {contentPack.DirectoryPath}\n" +
+                                $"It does not have an incubatordata.json file."
+                                , LogLevel.Warn);
+                    }
+                    if (File.Exists(Path.Combine(contentPack.DirectoryPath, "pregnancydata.json")))
+                    {
+                        this.Monitor.Log($"Reading content pack: {contentPack.Manifest.Name} {contentPack.Manifest.Version} from {contentPack.DirectoryPath}");
+                        PregnancyData contentPackData = contentPack.ReadJsonFile<PregnancyData>("pregnancydata.json");
+                        foreach (string pregnancyItemKey in contentPackData.PreganancyItems.Keys)
+                        {
+                            if (pregnancyData.PreganancyItems.Remove(pregnancyItemKey))
+                            {
+                                this.Monitor.Log($"Removing old pregnancy item entry for {pregnancyItemKey}, replacing with {contentPackData.PreganancyItems[pregnancyItemKey]}", LogLevel.Trace);
+                            }
+                            pregnancyData.PreganancyItems.Add(pregnancyItemKey, contentPackData.PreganancyItems[pregnancyItemKey]);
+                        }
+                        foreach (string offspringKey in contentPackData.Offspring.Keys)
+                        {
+                            if (pregnancyData.Offspring.Remove(offspringKey))
+                            {
+                                this.Monitor.Log($"Removing old animal to offspring entry for {offspringKey}, replacing with {contentPackData.Offspring[offspringKey]}", LogLevel.Trace);
+                            }
+                            pregnancyData.Offspring.Add(offspringKey, contentPackData.Offspring[offspringKey]);
+                        }
+                    }
+                    else
+                    {
+                        this.Monitor
+                            .Log(
+                                $"Ignoring content pack: {contentPack.Manifest.Name} {contentPack.Manifest.Version} from {contentPack.DirectoryPath}\n" +
+                                $"It does not have an incubatordata.json file."
+                                , LogLevel.Warn);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    this.Monitor
+                        .Log(
+                            $"Error while trying to load the content pack: {contentPack.Manifest.Name} {contentPack.Manifest.Version} from {contentPack.DirectoryPath}. It'll be ignored.\n{ex}"
+                            , LogLevel.Error);
+                }
+            }
         }
 
-
-        /*********
-        ** Private methods
-        *********/
         private void aboutPatch(Type typ, string method)
         {
-            MyMonitor.Log($"Checking {typ.Name} {method} patches", LogLevel.Debug);
+            MyMonitor.Log($"Checking {typ.Name} {method} patches", LogLevel.Trace);
 
             // get the MethodBase of the original
             var original =typ.GetMethod(method);
@@ -79,103 +202,179 @@ namespace BreedingOverhaul
             var patches = Harmony.GetPatchInfo(original);
             if (patches is null)
             {
-                MyMonitor.Log($"{method} not patched", LogLevel.Debug);
+                MyMonitor.Log($"{method} not patched", LogLevel.Trace);
             }
             else
             {
                 // get a summary of all different Harmony ids involved
-                MyMonitor.Log("all owners: " + patches.Owners, LogLevel.Debug);
+                MyMonitor.Log("all owners: " + patches.Owners, LogLevel.Trace);
 
                 // get info about all Prefixes/Postfixes/Transpilers
                 foreach (var patch in patches.Prefixes)
                 {
-                    MyMonitor.Log("index: " + patch.index, LogLevel.Debug);
-                    MyMonitor.Log("owner: " + patch.owner, LogLevel.Debug);
-                    MyMonitor.Log("patch method: " + patch.PatchMethod, LogLevel.Debug);
-                    MyMonitor.Log("priority: " + patch.priority, LogLevel.Debug);
-                    MyMonitor.Log("before: " + patch.before, LogLevel.Debug);
-                    MyMonitor.Log("after: " + patch.after, LogLevel.Debug);
+                    MyMonitor.Log("index: " + patch.index, LogLevel.Trace);
+                    MyMonitor.Log("owner: " + patch.owner, LogLevel.Trace);
+                    MyMonitor.Log("patch method: " + patch.PatchMethod, LogLevel.Trace);
+                    MyMonitor.Log("priority: " + patch.priority, LogLevel.Trace);
+                    MyMonitor.Log("before: " + patch.before, LogLevel.Trace);
+                    MyMonitor.Log("after: " + patch.after, LogLevel.Trace);
                 }
             }
-        }
-
-        /// <summary>Raised after the player presses a button on the keyboard, controller, or mouse.</summary>
-        /// <param name="sender">The event sender.</param>
-        /// <param name="e">The event data.</param>
-        private void OnButtonPressed(object sender, ButtonPressedEventArgs e)
-        {
-            // ignore if player hasn't loaded a save yet
-            if (!Context.IsWorldReady)
-                return;
-
-            // print button presses to the console window
-            this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
-            if (e.Button.ToString() == "OemCloseBrackets")
-            {
-                MyMonitor.Log("Re-reading JSON file");
-                incubatorData = MyHelper.Data.ReadJsonFile<IncubatorData>("data\\incubatordata.json");
-            }
-/*
-            if (e.Button.ToString() == "P")
-            {
-                this.applyPatches();
-            } else if (e.Button.ToString() == "L")
-            {
-                glp.Apply(harmony);
-            }*/
         }
 
         private void applyPatches()
         {
-            aboutPatch(typeof(AnimalHouse), "incubator");
-            aboutPatch(typeof(GameLocation), "performAction");
-            aboutPatch(typeof(AnimalHouse), "addNewHatchedAnimal");
+            //aboutPatch(typeof(AnimalHouse), "incubator");
+            //aboutPatch(typeof(GameLocation), "performAction");
+            //aboutPatch(typeof(AnimalHouse), "addNewHatchedAnimal");
 
-            MyMonitor.Log($"Applying all patches", LogLevel.Debug);
-            harmony.Patch(original: AccessTools.Method(typeof(StardewValley.AnimalHouse), nameof(StardewValley.AnimalHouse.isFull)),
-              prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.isFullPatch)));
-            //harmony.Patch(original: AccessTools.Method(typeof(StardewValley.AnimalHouse), nameof(StardewValley.AnimalHouse.checkAction)),
-            //              prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.checkActionPatch)));
+            MyMonitor.Log($"Applying all patches", LogLevel.Trace);
+
+            // patch dropping items into the incubator
             harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Object), nameof(StardewValley.Object.performObjectDropInAction)),
                           prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.performObjectDropInActionPrefix)));
             harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Object), nameof(StardewValley.Object.performObjectDropInAction)),
                           postfix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.performObjectDropInActionPostfix)));
-            // all patches from that other Harmony user:
-            /*
-            MyMonitor.Log($"Patching addNewHatchedAnimal - removing prefixes", LogLevel.Debug);
-            var og = typeof(StardewValley.AnimalHouse).GetMethod("addNewHatchedAnimal");
-            var ogPatches = Harmony.GetPatchInfo(og);
-            harmony.Unpatch(og, HarmonyPatchType.All, "Paritee.BetterFarmAnimalVariety");
-            HarmonyMethod hm = new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.addNewHatchedAnimalPatch));
-            hm.priority = Priority.First;
-            harmony.Patch(original: AccessTools.Method(typeof(StardewValley.AnimalHouse), nameof(StardewValley.AnimalHouse.addNewHatchedAnimal)),
-                         prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.addNewHatchedAnimalPatch)));
-            foreach (var patch in ogPatches.Prefixes)
+
+            // patch hatching items from the incubator
+            harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Events.QuestionEvent), nameof(StardewValley.Events.QuestionEvent.setUp)),
+                         prefix: new HarmonyMethod(typeof(QuestionEventPatch), nameof(QuestionEventPatch.setUpPrefix)));
+            harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Events.QuestionEvent), nameof(StardewValley.Events.QuestionEvent.setUp)),
+                         postfix: new HarmonyMethod(typeof(QuestionEventPatch), nameof(QuestionEventPatch.setUpPostfix)));
+
+
+            var ahm = Type.GetType("AnimalHusbandryMod.tools.InseminationSyringeOverrides, AnimalHusbandryMod");
+            if (ahm == null)
             {
-                if (patch.owner.Contains("StarAmy"))
-                {
-                    continue;
-                }
-                MyMonitor.Log($"Patching back in ${patch.owner} ${patch.PatchMethod}");
-                harmony.Patch(og, prefix: new HarmonyMethod(patch.PatchMethod));
+                MyMonitor.Log($"NO TYPE FOR SyringeOverrides", LogLevel.Trace);
             }
-            aboutPatch(typeof(AnimalHouse), "addNewHatchedAnimal");*/
+            else
+            {
+                var m = ahm.GetMethod("CheckCorrectProduct", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+                if (m == null)
+                {
+                    MyMonitor.Log($"NO METHOD for CheckCorrectProduct", LogLevel.Trace);
+                }
+                else
+                {
+                    MyMonitor.Log($"PATCHING CheckCorrectProduct", LogLevel.Trace);
 
-            harmony.Patch(original: AccessTools.Method( typeof(Paritee.StardewValley.Core.Locations.AnimalHouse), nameof(Paritee.StardewValley.Core.Locations.AnimalHouse.GetRandomTypeFromIncubator)),
-                prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.getRandomTypePatch)));
+                    harmony.Patch(original: AccessTools.Method(ahm, m.Name),
+                             prefix: new HarmonyMethod(typeof(AnimalHusbandryModPatch), nameof(AnimalHusbandryModPatch.CheckCorrectProductPrefix)));
+                    
+                }
+                m = ahm.GetMethod("canThisBeAttached", BindingFlags.Public | BindingFlags.Static);
+                if (m == null)
+                {
+                    MyMonitor.Log($"NO METHOD for canThisBeAttached", LogLevel.Trace);
+                } else
+                {
+                    MyMonitor.Log($"PATCHING canThisBeAttached", LogLevel.Trace);
 
-            //harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Utility), nameof(StardewValley.Utility.IsNormalObjectAtParentSheetIndex)),
-            //              prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.isEggType)));
+                    harmony.Patch(original: AccessTools.Method(ahm, m.Name),
+                             prefix: new HarmonyMethod(typeof(AnimalHusbandryModPatch), nameof(AnimalHusbandryModPatch.canThisBeAttachedPrefix)));
+                }
+                m = ahm.GetMethod("beginUsing", BindingFlags.Public | BindingFlags.Static);
+                if (m == null)
+                {
+                    MyMonitor.Log($"NO METHOD for beginUsing", LogLevel.Trace);
+                }
+                else
+                {
+                    MyMonitor.Log($"PATCHING beginUsing", LogLevel.Trace);
 
+                    harmony.Patch(original: AccessTools.Method(ahm, m.Name),
+                             prefix: new HarmonyMethod(typeof(AnimalHusbandryModPatch), nameof(AnimalHusbandryModPatch.beginUsingPrefix)));
+                }
+            }
 
-            //harmony.Patch(original: AccessTools.Method(typeof(StardewValley.Buildings.Coop), nameof(StardewValley.Buildings.Coop.doAction)),
-            //             prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.doActionPatch)));
-            harmony.Patch(original: AccessTools.Method(typeof(StardewValley.AnimalHouse), "resetSharedState"),
-                         prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.resetSharedStatePatch)));
+            ahm = Type.GetType("AnimalHusbandryMod.animals.PregnancyController, AnimalHusbandryMod");
+            if (ahm == null)
+            {
+                MyMonitor.Log($"NO TYPE FOR PregnancyController", LogLevel.Trace);
+            }
+            else
+            {
+                var m = ahm.GetMethod("addNewHatchedAnimal", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+                if (m == null)
+                {
+                    MyMonitor.Log($"NO METHOD for addNewHatchedAnimal", LogLevel.Trace);
+                }
+                else
+                {
+                    MyMonitor.Log($"PATCHING addNewHatchedAnimal", LogLevel.Trace);
 
-            //harmony.Patch(original: AccessTools.Method(typeof(StardewValley.AnimalHouse), nameof(StardewValley.AnimalHouse.incubator)),
-            //   prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.incubator)));
-            
+                    harmony.Patch(original: AccessTools.Method(ahm, m.Name),
+                             prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.addNewHatchedAnimalPrefix)));
+
+                }
+            }
+
+            ahm = Type.GetType("Paritee.StardewValley.Core.Locations.AnimalHouse, Paritee.StardewValley.Core");
+            if (ahm == null)
+            {
+                MyMonitor.Log($"NO TYPE FOR AnimalHouse", LogLevel.Trace);
+            }
+            else
+            {
+                var m = ahm.GetMethod("GetRandomTypeFromIncubator", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+                if (m == null)
+                {
+                    MyMonitor.Log($"NO METHOD for GetRandomTypeFromIncubator", LogLevel.Trace);
+                }
+                else
+                {
+                    MyMonitor.Log($"PATCHING GetRandomTypeFromIncubator", LogLevel.Trace);
+
+                    harmony.Patch(original: AccessTools.Method(ahm, m.Name),
+                             prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.getRandomTypeFromIncubatorPatch)));
+
+                }
+
+                m = ahm.GetMethod("GetIncubatorHatchEvent", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+                if (m == null)
+                {
+                    MyMonitor.Log($"NO METHOD for GetIncubatorHatchEvent", LogLevel.Trace);
+                }
+                else
+                {
+                    MyMonitor.Log($"PATCHING GetIncubatorHatchEvent", LogLevel.Trace);
+
+                    harmony.Patch(original: AccessTools.Method(ahm, m.Name),
+                             prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.getIncubatorHatchEventPatch)));
+
+                }
+            }
+
+            ahm = Type.GetType("Paritee.StardewValley.Core.Characters.FarmAnimal, Paritee.StardewValley.Core");
+            if (ahm == null)
+            {
+                MyMonitor.Log($"NO TYPE FOR FarmAnimal", LogLevel.Trace);
+            }
+            else
+            {
+                MethodInfo m = null;
+                foreach(MethodInfo mx in ahm.GetMethods(BindingFlags.Public | BindingFlags.Static))
+                {
+                    if ((mx.Name == "GetRandomTypeFromProduce") && (mx.GetParameters().Length == 2) && mx.GetParameters()[0].ParameterType == typeof(FarmAnimal) && mx.GetParameters()[1].ParameterType == typeof(Dictionary<string, List<string>>) && mx.ReturnType == typeof(string))
+                    {
+                        m = mx;
+                        break;
+                    }
+                }
+                if (m == null)
+                {
+                    MyMonitor.Log($"NO METHOD for GetRandomTypeFromProduce", LogLevel.Trace);
+                }
+                else
+                {
+                    MyMonitor.Log($"PATCHING GetRandomTypeFromProduce", LogLevel.Trace);
+
+                    harmony.Patch(original: m,
+                             prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.getRandomTypeFromProducePatch)));
+
+                }
+            }
         }
 
         /// <summary>Raised after the game is launched, right before the first update tick. This happens once per game session (unrelated to loading saves). All mods are loaded and initialised at this point, so this is a good time to set up mod integrations.</summary>
@@ -183,12 +382,8 @@ namespace BreedingOverhaul
         /// <param name="args">The event data.</param>
         private void OnGameLaunched(object sender, GameLaunchedEventArgs args)
         {
-            this.Monitor.Log($"Patching in Breeeding Overhaul for {MyHelper.ModRegistry.ModID}.", LogLevel.Debug);
+            this.Monitor.Log($"Patching in Breeeding Overhaul for {MyHelper.ModRegistry.ModID}.", LogLevel.Trace);
             applyPatches();
-
-            harmony.Patch(original: AccessTools.Method(typeof(Tool), nameof(Tool.beginUsing)),
-                          prefix: new HarmonyMethod(typeof(IncubatorPatch), nameof(IncubatorPatch.beginUsingPatch)));
-
         }
     }
 }

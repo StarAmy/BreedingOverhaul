@@ -1,0 +1,27 @@
+{
+  "PreganancyItems": {
+    "Brown Cow": "Cow DNA",
+    "White Cow": "Cow DNA",
+    "Male Cow": "",
+    "Goat": "Goat DNA",
+    "Male Goat": "",
+    "Sheep": "Sheep DNA",
+    "Male Sheep": "",
+    "Rabbit": "Rabbit DNA",
+    "Male Rabbit": "",
+    "Pig": "Pig DNA",
+    "Male Pig": "",
+    "Female Alpaca": "Alpaca DNA",
+    "Male Alpaca": "",
+    "Female Donkey": "Donkey DNA",
+    "Male Donkey": "",
+    "Female Deer": "Deer DNA",
+    "Male Deer": "",
+    "Female Yak": "Yak DNA",
+    "Male Yak": "",
+    "Female Sport Horse": "Sport Horse DNA",
+    "Male Sport Horse": "",
+    "Female Draft Horse": "Draft Horse DNA",
+    "Male Draft Horse": ""
+  }
+}
