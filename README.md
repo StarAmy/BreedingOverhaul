@@ -49,41 +49,41 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
         	Cow Horn, which can be processed into Cow DNA. 
         	Goat Horn, which can be processed into Goat DNA.
         	Sheep Horn, which can be processed into Sheep DNA.
-		Pig Tusk, which can be processed into Pig DNA.
-		Chicken Feather, which can be processed into Chicken DNA. Chicken DNA can be used with ALL chicken variants, even blue, golden, and void. 
-		Ostrich Feather, which can be processed into Ostrich DNA. 
-		Dinosaur Scale, which can be processed into Dinosaur DNA.
+			Pig Tusk, which can be processed into Pig DNA.
+			Chicken Feather, which can be processed into Chicken DNA. Chicken DNA can be used with ALL chicken variants, even blue, golden, and void. 
+			Ostrich Feather, which can be processed into Ostrich DNA. 
+			Dinosaur Scale, which can be processed into Dinosaur DNA.
              
         	Blue Egg, a new produce drop from blue chickens.
-		Large Blue Egg, a new deluxe produce drop from blue chickens.
-		Large Duck Egg, a new deluxe produce drop from ducks.
-		Large Golden Egg, a new deluxe produce drop from golden chickens.
-		Large Void Egg, a new deluxe produce drop from void chickens.
-		Large Ostrich Egg, a new deluxe produce drop from ostriches. 
-		Large Dinosaur Egg, a new deluxe produce drop from dinosaurs. 
+			Large Blue Egg, a new deluxe produce drop from blue chickens.
+			Large Duck Egg, a new deluxe produce drop from ducks.
+			Large Golden Egg, a new deluxe produce drop from golden chickens.
+			Large Void Egg, a new deluxe produce drop from void chickens.
+			Large Ostrich Egg, a new deluxe produce drop from ostriches. 
+			Large Dinosaur Egg, a new deluxe produce drop from dinosaurs. 
         
         	Fertilized White Egg, which hatch 1 new baby chicken (brown, white, or male)
-		Fertilized Brown Egg, which hatch 1 new baby chicken (brown, white, or male)
-		Fertilized Blue Egg, which hatch 1 new baby chicken (blue or male)
-		Fertilized Void Egg, which hatch 1 new baby chicken (void or male)
-		Fertilized Golden Egg, which hatch 1 new baby chicken (golden or male)
+			Fertilized Brown Egg, which hatch 1 new baby chicken (brown, white, or male)
+			Fertilized Blue Egg, which hatch 1 new baby chicken (blue or male)
+			Fertilized Void Egg, which hatch 1 new baby chicken (void or male)
+			Fertilized Golden Egg, which hatch 1 new baby chicken (golden or male)
 
 		Fertilized Duck Egg, which hatch 1 new baby duck (normal or male)
-		Fertilized Ostrich Egg, which hatch 1 new baby ostrich (normal or male)
-		Fertilized Dinosaur Egg, which hatch 1 new dinosaur (normal or male)
+			Fertilized Ostrich Egg, which hatch 1 new baby ostrich (normal or male)
+			Fertilized Dinosaur Egg, which hatch 1 new dinosaur (normal or male)
         
         	Fertilized Large White Egg, which hatch 1-2 new baby chickens (brown, white, or male)*
-		Fertilized Large Brown Egg, which hatch 1-1 new baby chickens (brown, white, or male)*
-		Fertilized Large Blue Egg, which hatch 1-2 new baby chickens (blue or male)*
-		Fertilized Large Void Egg, which hatch 1-2 new baby chickens (void or male)*
-		Fertilized Large Golden Egg, which hatch 1-2 new baby chickens (golden or male)*
-		Fertilized Large Duck Egg, which hatch 1-2 new baby ducks (normal or male)*
-		Fertilized Large Ostrich Egg, which hatch 1-2 new baby ostrich (normal or male)*
-		Fertilized Large Dinosaur Egg, which hatch 1-2 new dinosaurs (normal or male)*
+			Fertilized Large Brown Egg, which hatch 1-1 new baby chickens (brown, white, or male)*
+			Fertilized Large Blue Egg, which hatch 1-2 new baby chickens (blue or male)*
+			Fertilized Large Void Egg, which hatch 1-2 new baby chickens (void or male)*
+			Fertilized Large Golden Egg, which hatch 1-2 new baby chickens (golden or male)*
+			Fertilized Large Duck Egg, which hatch 1-2 new baby ducks (normal or male)*
+			Fertilized Large Ostrich Egg, which hatch 1-2 new baby ostrich (normal or male)*
+			Fertilized Large Dinosaur Egg, which hatch 1-2 new dinosaurs (normal or male)*
         
         	Blue Mayonnaise, a new artisan good made from blue eggs and large blue eggs.
-		Golden Mayonnaise, a new artisan good made from golden eggs and large golden eggs.
-		Ostrich Mayonnaise, a new artisan good made from ostrich eggs and large ostrich eggs.
+			Golden Mayonnaise, a new artisan good made from golden eggs and large golden eggs.
+			Ostrich Mayonnaise, a new artisan good made from ostrich eggs and large ostrich eggs.
         
 6. [PFM] Breeding Overhaul Object Rules adds processing rules for all the new objects. 
 
@@ -104,7 +104,7 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
         
         	Blue Egg, Large Blue Egg = Blue Mayonnaise
         	Golden Egg, Large Golden Egg = Golden Mayonnaise
-		Large Dinosaur Egg = Dinosaur Mayonnaise
+			Large Dinosaur Egg = Dinosaur Mayonnaise
 
 So, what does this mean for gameplay? 
 
