@@ -3,9 +3,12 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
 
 1. Breeding Overhaul, the main project code. It makes the following changes to the base game / Animal Husbandry Mod behavior:
 
- 		Disables normal incubator function, requiring the correct type of 'fertilized' egg instead (the item required for each type of animal can be manually reconfigured in the config file 'Incubator Data').
+ 		Disables normal incubator function, requiring the correct type of 'fertilized' egg instead 
+		(the item required for each type of animal can be manually reconfigured in the config file 'Incubator Data').
         
-		Disables normal pregnancy/insemination function, requiring the correct type of 'DNA' in the AHM insemination syringe instead (the item required for inseminating each type of animal and each parent:offspring possibility can be manually reconfigured in the config file 'Pregnancy Data').
+		Disables normal pregnancy/insemination function, requiring the correct type of 'DNA' in the AHM insemination 
+		syringe instead (the item required for inseminating each type of animal and each parent:offspring possibility 
+		can be manually reconfigured in the config file 'Pregnancy Data').
 
 		Disables spontaneous birthing events.
     
@@ -44,13 +47,15 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
         
 5. [JA] Breeding Overhaul Objects adds all the new objects dropped by 'male' and 'female' variants, as well as the DNA and fertilized eggs they can be crafted or processed into.
         
-        	Manure, which can be processed into quality fertilizer. It’s not worth very much before, and no one likes getting this out of the blue!
+        	Manure, which can be processed into quality fertilizer. 
+			It’s not worth very much before, and no one likes getting this out of the blue!
      
         	Cow Horn, which can be processed into Cow DNA. 
         	Goat Horn, which can be processed into Goat DNA.
         	Sheep Horn, which can be processed into Sheep DNA.
 			Pig Tusk, which can be processed into Pig DNA.
-			Chicken Feather, which can be processed into Chicken DNA. Chicken DNA can be used with ALL chicken variants, even blue, golden, and void. 
+			Chicken Feather, which can be processed into Chicken DNA. Chicken DNA can 
+			be used with ALL chicken variants, even blue, golden, and void. 
 			Ostrich Feather, which can be processed into Ostrich DNA. 
 			Dinosaur Scale, which can be processed into Dinosaur DNA.
              
@@ -110,15 +115,19 @@ So, what does this mean for gameplay?
 
 Breeding Egg-Laying Animals In-Game (assuming you use default configuration for the incubatordata file):
 
-                1. Obtain DNA for the correct species - you can buy DNA from Marnie, or process your male animal's unique drops into it at the recycling machine. 
+                1. Obtain DNA for the correct species - you can buy DNA from Marnie, or process 
+		your male animal's unique drops into it at the recycling machine. 
                 2. Craft a fertile egg using an egg and a DNA, or a large fertile egg using a large egg and a DNA.
-                3. Drop the fertile egg in the incubator just like normal, and wait for it to hatch (now it has a chance to be born male, too). Large fertile eggs have a chance to hatch two new babies if you have space for them.
+                3. Drop the fertile egg in the incubator just like normal, and wait for it to hatch (now it has a 
+		chance to be born male, too). Large fertile eggs have a chance to hatch two new babies if you have space for them.
 
 Breeding Live-Birth Animals In-Game (assuming you use default configuration for the pregnancydata file):
 
-                1. Obtain DNA for the correct species - you can buy DNA from Marnie, or process your male animal's unique drops into it at the recycling machine. 
+                1. Obtain DNA for the correct species - you can buy DNA from Marnie, or process your male animal's 
+		unique drops into it at the recycling machine. 
                 2. Use the DNA in the Animal Husbandry Mod insemination syringe instead of the vanilla drops (milk, etc). 
-                3. Wait for your animal to be born through the normal Animal Husbandry Mod process (now it has a chance to be born male, too). 
+                3. Wait for your animal to be born through the normal Animal Husbandry Mod process 
+		(now it has a chance to be born male, too). 
 
 A New Quality Fertilizer Source:
 
@@ -126,19 +135,26 @@ A New Quality Fertilizer Source:
 
 You Need a Few Males For Community Center Bundle:
 
-               Duck Feather and Rabbit Foot items are now dropped by male ducks and male rabbits respectively, instead of their vanilla ('female') counterparts, so you will need to plan ahead and get male chicks / kits from Marnie to complete the original, unmixed community center bundle.
+               Duck Feather and Rabbit Foot items are now dropped by male ducks and male rabbits respectively, 
+	       instead of their vanilla ('female') counterparts, so you will need to plan ahead and get male 
+	       chicks / kits from Marnie to complete the original, unmixed community center bundle.
 
 Adopt & Skin Compatible 
 
-		Paritee’s Better Farm Animal Variety and Animal Husbandry Mod  (required dependencies for this mod) mostly play nice with Adopt & Skin, which will let you further customize and randomize your animals. DO NOT try to enter modded animals into the AHM Animal Shows, though.
+		Paritee’s Better Farm Animal Variety and Animal Husbandry Mod  (required dependencies for this mod) 
+		mostly play nice with Adopt & Skin, which will let you further customize and randomize your animals. 
+		DO NOT try to enter modded animals into the AHM Animal Shows, though.
 
 Includes a Content Pack Framework
 
-		Feel like using Paritee’s awesome males or another set instead of mine? Have some BFAV animals you want to add breeding functionality for? Just add their data with an extra content pack (example HERE), configure it however you want, and voila! 
+		Feel like using Paritee’s awesome males or another set instead of mine? Have some BFAV animals you want 
+		to add breeding functionality for? Just add their data with an extra content pack (example HERE), 
+		configure it however you want, and voila! 
 . 
 A New Terminal Command
 
-		Type list_animals into your terminal (or your chat bar if you’re using BLANK mod) to get a full list of animal names and their types. This can be handy if you’re using animal skins with few visual differences between genders/types.
+		Type list_animals into your terminal (or your chat bar if you’re using BLANK mod) to get a full list of animal 
+		names and their types. This can be handy if you’re using animal skins with few visual differences between genders/types.
 
 
 
