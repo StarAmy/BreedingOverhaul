@@ -68,7 +68,7 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
 			Fertilized Void Egg, which hatch 1 new baby chicken (void or male)
 			Fertilized Golden Egg, which hatch 1 new baby chicken (golden or male)
 
-		Fertilized Duck Egg, which hatch 1 new baby duck (normal or male)
+			Fertilized Duck Egg, which hatch 1 new baby duck (normal or male)
 			Fertilized Ostrich Egg, which hatch 1 new baby ostrich (normal or male)
 			Fertilized Dinosaur Egg, which hatch 1 new dinosaur (normal or male)
         
