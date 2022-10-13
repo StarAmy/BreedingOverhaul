@@ -3,11 +3,11 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
 
 1. Breeding Overhaul, the main project code. It makes the following changes to the base game / Animal Husbandry Mod behavior:
 
- 	Disables normal incubator function, requiring the correct type of 'fertilized' egg instead (the item required for each type of animal can be manually reconfigured in the config file 'Incubator Data').
+ 		Disables normal incubator function, requiring the correct type of 'fertilized' egg instead (the item required for each type of animal can be manually reconfigured in the config file 'Incubator Data').
         
-	Disables normal pregnancy/insemination function, requiring the correct type of 'DNA' in the AHM insemination syringe instead (the item required for inseminating each type of animal and each parent:offspring possibility can be manually reconfigured in the config file 'Pregnancy Data').
+		Disables normal pregnancy/insemination function, requiring the correct type of 'DNA' in the AHM insemination syringe instead (the item required for inseminating each type of animal and each parent:offspring possibility can be manually reconfigured in the config file 'Pregnancy Data').
 
-	Disables spontaneous birthing events.
+		Disables spontaneous birthing events.
     
 2. [BFAV] Vanilla Males adds male variants to every category of vanilla livestock via Better Farm Animal Variety. Males drop manure as a common drop, and a species-specific item as a rare drop. 
         
@@ -49,37 +49,37 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
         	Cow Horn, which can be processed into Cow DNA. 
         	Goat Horn, which can be processed into Goat DNA.
         	Sheep Horn, which can be processed into Sheep DNA.
-Pig Tusk, which can be processed into Pig DNA.
-Chicken Feather, which can be processed into Chicken DNA. Chicken DNA can be used with ALL chicken variants, even blue, golden, and void. 
-Ostrich Feather, which can be processed into Ostrich DNA. 
-Dinosaur Scale, which can be processed into Dinosaur DNA.
+		Pig Tusk, which can be processed into Pig DNA.
+		Chicken Feather, which can be processed into Chicken DNA. Chicken DNA can be used with ALL chicken variants, even blue, golden, and void. 
+		Ostrich Feather, which can be processed into Ostrich DNA. 
+		Dinosaur Scale, which can be processed into Dinosaur DNA.
              
         	Blue Egg, a new produce drop from blue chickens.
-Large Blue Egg, a new deluxe produce drop from blue chickens.
-Large Duck Egg, a new deluxe produce drop from ducks.
-Large Golden Egg, a new deluxe produce drop from golden chickens.
-Large Void Egg, a new deluxe produce drop from void chickens.
-Large Ostrich Egg, a new deluxe produce drop from ostriches. 
-Large Dinosaur Egg, a new deluxe produce drop from dinosaurs. 
+		Large Blue Egg, a new deluxe produce drop from blue chickens.
+		Large Duck Egg, a new deluxe produce drop from ducks.
+		Large Golden Egg, a new deluxe produce drop from golden chickens.
+		Large Void Egg, a new deluxe produce drop from void chickens.
+		Large Ostrich Egg, a new deluxe produce drop from ostriches. 
+		Large Dinosaur Egg, a new deluxe produce drop from dinosaurs. 
         
         	Fertilized White Egg, which hatch 1 new baby chicken (brown, white, or male)
-Fertilized Brown Egg, which hatch 1 new baby chicken (brown, white, or male)
-Fertilized Blue Egg, which hatch 1 new baby chicken (blue or male)
-Fertilized Void Egg, which hatch 1 new baby chicken (void or male)
-Fertilized Golden Egg, which hatch 1 new baby chicken (golden or male)
+		Fertilized Brown Egg, which hatch 1 new baby chicken (brown, white, or male)
+		Fertilized Blue Egg, which hatch 1 new baby chicken (blue or male)
+		Fertilized Void Egg, which hatch 1 new baby chicken (void or male)
+		Fertilized Golden Egg, which hatch 1 new baby chicken (golden or male)
 
-Fertilized Duck Egg, which hatch 1 new baby duck (normal or male)
-Fertilized Ostrich Egg, which hatch 1 new baby ostrich (normal or male)
-Fertilized Dinosaur Egg, which hatch 1 new dinosaur (normal or male)
+		Fertilized Duck Egg, which hatch 1 new baby duck (normal or male)
+		Fertilized Ostrich Egg, which hatch 1 new baby ostrich (normal or male)
+		Fertilized Dinosaur Egg, which hatch 1 new dinosaur (normal or male)
         
         	Fertilized Large White Egg, which hatch 1-2 new baby chickens (brown, white, or male)*
-Fertilized Large Brown Egg, which hatch 1-1 new baby chickens (brown, white, or male)*
-Fertilized Large Blue Egg, which hatch 1-2 new baby chickens (blue or male)*
-Fertilized Large Void Egg, which hatch 1-2 new baby chickens (void or male)*
-Fertilized Large Golden Egg, which hatch 1-2 new baby chickens (golden or male)*
-Fertilized Large Duck Egg, which hatch 1-2 new baby ducks (normal or male)*
-Fertilized Large Ostrich Egg, which hatch 1-2 new baby ostrich (normal or male)*
-Fertilized Large Dinosaur Egg, which hatch 1-2 new dinosaurs (normal or male)*
+		Fertilized Large Brown Egg, which hatch 1-1 new baby chickens (brown, white, or male)*
+		Fertilized Large Blue Egg, which hatch 1-2 new baby chickens (blue or male)*
+		Fertilized Large Void Egg, which hatch 1-2 new baby chickens (void or male)*
+		Fertilized Large Golden Egg, which hatch 1-2 new baby chickens (golden or male)*
+		Fertilized Large Duck Egg, which hatch 1-2 new baby ducks (normal or male)*
+		Fertilized Large Ostrich Egg, which hatch 1-2 new baby ostrich (normal or male)*
+		Fertilized Large Dinosaur Egg, which hatch 1-2 new dinosaurs (normal or male)*
         
         	Blue Mayonnaise, a new artisan good made from blue eggs and large blue eggs.
 		Golden Mayonnaise, a new artisan good made from golden eggs and large golden eggs.
@@ -104,7 +104,7 @@ Fertilized Large Dinosaur Egg, which hatch 1-2 new dinosaurs (normal or male)*
         
         	Blue Egg, Large Blue Egg = Blue Mayonnaise
         	Golden Egg, Large Golden Egg = Golden Mayonnaise
-	Large Dinosaur Egg = Dinosaur Mayonnaise
+		Large Dinosaur Egg = Dinosaur Mayonnaise
 
 So, what does this mean for gameplay? 
 
@@ -130,15 +130,15 @@ You Need a Few Males For Community Center Bundle:
 
 Adopt & Skin Compatible 
 
-	Paritee’s Better Farm Animal Variety and Animal Husbandry Mod  (required dependencies for this mod) mostly play nice with Adopt & Skin, which will let you further customize and randomize your animals. DO NOT try to enter modded animals into the AHM Animal Shows, though.
+		Paritee’s Better Farm Animal Variety and Animal Husbandry Mod  (required dependencies for this mod) mostly play nice with Adopt & Skin, which will let you further customize and randomize your animals. DO NOT try to enter modded animals into the AHM Animal Shows, though.
 
 Includes a Content Pack Framework
 
-Feel like using Paritee’s awesome males or another set instead of mine? Have some BFAV animals you want to add breeding functionality for? Just add their data with an extra content pack (example HERE), configure it however you want, and voila! 
+		Feel like using Paritee’s awesome males or another set instead of mine? Have some BFAV animals you want to add breeding functionality for? Just add their data with an extra content pack (example HERE), configure it however you want, and voila! 
 . 
 A New Terminal Command
 
-	Type list_animals into your terminal (or your chat bar if you’re using BLANK mod) to get a full list of animal names and their types. This can be handy if you’re using animal skins with few visual differences between genders/types.
+		Type list_animals into your terminal (or your chat bar if you’re using BLANK mod) to get a full list of animal names and their types. This can be handy if you’re using animal skins with few visual differences between genders/types.
 
 
 
