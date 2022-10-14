@@ -152,7 +152,8 @@ Includes a Content Pack Framework
 
 		Feel like using Paritee’s awesome males or another set instead of mine? Have some BFAV animals you want 
 		to add breeding functionality for? Just add their data with an extra content pack (example HERE), 
-		configure it however you want, and voila! 
+		configure it however you want, and voila! If a modded animal is not included on the config list, 
+		breeding behavior reverts back to 'normal' AHM breeding behavior (inseminate animals with their own produce). 
 . 
 A New Terminal Command
 
