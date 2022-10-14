@@ -5,11 +5,12 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
 1. Breeding Overhaul, the main project code. It makes the following changes to the base game / Animal Husbandry Mod behavior:
 
  		Disables normal incubator function, requiring the correct type of 'fertilized' egg instead 
-		(the item required for each type of animal can be manually reconfigured in the config file 'Incubator Data').
+		(the item required for each type of animal can be manually reconfigured in the config file 
+		'Incubator Data').
         
-		Disables normal pregnancy/insemination function, requiring the correct type of 'DNA' in the AHM insemination 
-		syringe instead (the item required for inseminating each type of animal and each parent:offspring possibility 
-		can be manually reconfigured in the config file 'Pregnancy Data').
+		Disables normal pregnancy/insemination function, requiring the correct type of 'DNA' in the AHM 
+		insemination syringe instead (the item required for inseminating each type of animal and each 
+		parent:offspring possibility can be manually reconfigured in the config file 'Pregnancy Data').
 
 		Disables spontaneous birthing events.
     
