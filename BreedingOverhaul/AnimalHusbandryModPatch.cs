@@ -10,13 +10,14 @@ namespace BreedingOverhaul
     internal class AnimalHusbandryModPatch
     {
 
-        public static bool CheckCorrectProductPrefix(FarmAnimal animal, StardewValley.Object o, ref int __state, ref bool __result)
+        public static bool CheckCorrectProductPrefix(FarmAnimal animal, StardewValley.Object o, ref bool __result)
         {
             ModEntry.MyMonitor.Log($"CheckCorrectProduct prefix", LogLevel.Trace);
+            if (animal == null || o == null) return true;
 
             if (ModEntry.pregnancyData.PreganancyItems.ContainsKey(animal.displayType))
             {
-                __result =  ModEntry.pregnancyData.MatchingPregnancyItem(animal, o);
+                __result = ModEntry.pregnancyData.MatchingPregnancyItem(animal, o);
                 return false;
             }
             return true;
@@ -111,7 +112,7 @@ namespace BreedingOverhaul
                     Animals[inseminationSyringeId] = null;
                     ret =  false;
                 }
-                else if ((m.Invoke(null, new object[]{ animal, __instance.attachments[0]}) as bool?) == false)
+                else if (__instance.attachments != null && __instance.attachments[0] != null && (m.Invoke(null, new object[]{ animal, __instance.attachments[0]}) as bool?) == false)
                 {
                     string customProduceName = ModEntry.pregnancyData.GetPregnancyItemName(animal);
                     if (customProduceName != "")
