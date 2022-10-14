@@ -1,14 +1,16 @@
-
+****This mod is in ALPHA release stage. It has no currently known issues, but is likely to contain bugs, extraneous code, etc, and the documentation is under constant improvement. Please only download if you're willing to be patient as problems crop up, and I encourage early downloaders to let me know of anything you'd like to see adjusted or rebalanced. ****
+---------------------------------
 Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breeding system when used in conjunction with Animal Husbandry Mod (formerly ButcherMod) and Better Farm Animal Variety. Json Assets (DGA version will be out at some point), Production Framework Mod, and Content Patcher are all also required for full function. It consists of the following sections:
 
 1. Breeding Overhaul, the main project code. It makes the following changes to the base game / Animal Husbandry Mod behavior:
 
  		Disables normal incubator function, requiring the correct type of 'fertilized' egg instead 
-		(the item required for each type of animal can be manually reconfigured in the config file 'Incubator Data').
+		(the item required for each type of animal can be manually reconfigured in the config file 
+		'Incubator Data').
         
-		Disables normal pregnancy/insemination function, requiring the correct type of 'DNA' in the AHM insemination 
-		syringe instead (the item required for inseminating each type of animal and each parent:offspring possibility 
-		can be manually reconfigured in the config file 'Pregnancy Data').
+		Disables normal pregnancy/insemination function, requiring the correct type of 'DNA' in the AHM 
+		insemination syringe instead (the item required for inseminating each type of animal and each 
+		parent:offspring possibility can be manually reconfigured in the config file 'Pregnancy Data').
 
 		Disables spontaneous birthing events.
     
@@ -85,7 +87,9 @@ Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breedi
 			Fertilized Large Duck Egg, which hatch 1-2 new baby ducks (normal or male)*
 			Fertilized Large Ostrich Egg, which hatch 1-2 new baby ostrich (normal or male)*
 			Fertilized Large Dinosaur Egg, which hatch 1-2 new dinosaurs (normal or male)*
-        
+			
+        * In development; probably going to be a 1.1.0 feature
+	
         	Blue Mayonnaise, a new artisan good made from blue eggs and large blue eggs.
 			Golden Mayonnaise, a new artisan good made from golden eggs and large golden eggs.
 			Ostrich Mayonnaise, a new artisan good made from ostrich eggs and large ostrich eggs.
@@ -149,7 +153,8 @@ Includes a Content Pack Framework
 
 		Feel like using Paritee’s awesome males or another set instead of mine? Have some BFAV animals you want 
 		to add breeding functionality for? Just add their data with an extra content pack (example HERE), 
-		configure it however you want, and voila! 
+		configure it however you want, and voila! If a modded animal is not included on the config list, 
+		breeding behavior reverts back to 'normal' AHM breeding behavior (inseminate animals with their own produce). 
 . 
 A New Terminal Command
 
@@ -157,5 +162,3 @@ A New Terminal Command
 		names and their types. This can be handy if you’re using animal skins with few visual differences between genders/types.
 
 
-
-* Double hatching feature is in the works and will be included in ~1.1.0
