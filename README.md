@@ -1,6 +1,6 @@
 ****This mod is in ALPHA release stage. It has no currently known issues, but is likely to contain bugs, extraneous code, etc, and the documentation is under constant improvement. Please only download if you're willing to be patient as problems crop up, and I encourage early downloaders to let me know of anything you'd like to see adjusted or rebalanced. ****
 ---------------------------------
-Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breeding system when used in conjunction with Animal Husbandry Mod (formerly ButcherMod) and Better Farm Animal Variety. Json Assets (DGA version will be out at some point), Production Framework Mod, and Content Patcher are all also required for full function. It consists of the following sections:
+Breeding Overhaul is a Stardew Valley mod that aims to revamp the vanilla breeding system when used in conjunction with Animal Husbandry Mod (formerly ButcherMod) and Better Farm Animal Variety. Json Assets (DGA version will be out at some point), Production Framework Mod, and Content Patcher are all also required for full function. As of the 1.1.0 update, it consists of the following sections:
 
 1. Breeding Overhaul, the main project code. It makes the following changes to the base game / Animal Husbandry Mod behavior:
 
