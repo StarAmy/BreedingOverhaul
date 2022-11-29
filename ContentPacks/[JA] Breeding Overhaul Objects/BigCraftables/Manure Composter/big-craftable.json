@@ -1,6 +1,6 @@
 {
   "Name": "Manure Composter",
-  "Description": "A small oak sapling inoculated with candy cap mushroom spores. Produces when left outdoors in the rain, but stops during the heat of summer.",
+  "Description": "A place to process livestock manure into usable fertilizer.",
   "Category": "Crafting",
   "ProvidesLight": false,
   "ReserveExtraIndexCount": 3,
