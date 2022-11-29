@@ -1,0 +1,27 @@
+{
+  "Name": "Genetic Extractor",
+  "Description": "A small oak sapling inoculated with candy cap mushroom spores. Produces when left outdoors in the rain, but stops during the heat of summer.",
+  "Category": "Crafting",
+  "ProvidesLight": false,
+  "ReserveExtraIndexCount": 3,
+  "Recipe":
+      {
+     "ResultCount": 1,
+        "Ingredients": [
+        {
+            "Object": "Manure",
+            "Count": 5,
+        },
+        {
+            "Object": "Hay",
+            "Count": 10,
+        }, 
+        {
+            "Object": "Hardwood",
+            "Count": 10,
+        },
+      ],
+      "IsDefault":true,
+      "CanPurchase": false,
+  },
+}

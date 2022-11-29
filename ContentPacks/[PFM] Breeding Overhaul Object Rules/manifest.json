@@ -1,7 +1,7 @@
 ﻿{
 	"Name": "[PFM] Breeding Overhaul Object Rules",
 	"Author": "StarAmy",
-	"Version": "1.0.0",
+	"Version": "1.1.0",
 	"Description": "Adds producing rules for my mod.",
 	"UniqueID": "StarAmy.ObjectRules",
 	"MinimumApiVersion": "3.0.0",
